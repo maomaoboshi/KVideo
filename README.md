@@ -269,6 +269,7 @@ KVideo 现在支持两套认证模式：
 - 配置 `AUTH_SECRET`
 - 配置 `UPSTASH_REDIS_REST_URL`
 - 配置 `UPSTASH_REDIS_REST_TOKEN`
+- （可选）配置 `MANAGED_AUTH_ENABLED=true` 强制启用托管账户模式 （默认方式无法开启时可添加此环境变量）
 
 启用后：
 
@@ -277,6 +278,7 @@ KVideo 现在支持两套认证模式：
 - 超级管理员可在设置页直接管理账户和权限
 - 配置同步、历史、收藏等跨设备数据会按登录账户自动隔离
 
+> **强制启用托管模式**：设置 `MANAGED_AUTH_ENABLED=true` 可跳过 `AUTH_SECRET` 和 Redis 的检查，强制进入托管账户模式。
 首次启用时，如果 Redis 里还没有账户，会自动使用 `ADMIN_PASSWORD` 和 `ACCOUNTS` 作为引导种子创建首批托管账户。
 
 ### 方式二：单管理员密码（环境变量模式）
